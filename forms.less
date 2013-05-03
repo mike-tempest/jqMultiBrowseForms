@@ -1,0 +1,398 @@
+@formBackground: #f0faff;
+@formTextDarkBlue: #39657b;
+@formTextGrey: #686d71;
+
+form {
+    margin:0 auto; // TODO: REMOVE THIS AS ITS ONLY FOR WHILE BUILDING OUT FORM
+    max-width:620px;
+
+    fieldset {
+        background:#f0faff;
+        border:0;
+        margin:20px 0 0;
+        padding:10px 35px 35px;
+        position:relative;
+    }
+    
+    label {
+        display:block;
+        font-size:1.3em;
+        font-weight:bold;
+        line-height:1.5em;
+        padding-top:10px;
+    }
+    
+    input[type=text], 
+    input[type=password] {
+        background:@formBackground;
+        border:0;
+        border-bottom:1px solid #b9e3f8;
+        color:@formTextDarkBlue;
+        font-family: helvetica, arial, san-serif;
+        font-size:1.3em;
+        font-weight:bold;
+        line-height:1.5em;
+        padding:10px;
+        width:100%;
+    }
+    
+    /* INPUT STYLING */
+    .jqTransformInputWrapper {
+        position:relative;
+    }
+
+    input:focus[type=text], 
+    input:focus[type=password] {
+        background:#fff;
+        color:@formTextGrey;
+        font-weight:normal;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+        -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+        -ms-box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+        -o-box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+    }
+
+    ::-webkit-input-placeholder {
+        color:#a2c7d9;
+        font-weight:normal;
+    }
+    :-moz-placeholder {
+        color:#a2c7d9;
+        font-weight:normal;
+    }
+    ::-moz-placeholder {
+        color:#a2c7d9;
+        font-weight:normal;
+    }
+    :-ms-input-placeholder {
+        color:#a2c7d9;
+        font-weight:normal;
+    }
+
+    select {
+        width:100%;
+    }
+    
+    /* JQTRANSFORM */
+    /* General Form Changes */
+
+    form.jqTransformSelectWrapper {
+        label{
+            margin-top:4px;
+            margin-right: 8px;
+            display: block;
+            float:left;
+        }
+        div.rowElem{
+            clear:both;
+            padding:4px 0px;
+        }
+    }
+    
+    .jqTransformInputWrapper {
+        width:100% !important;
+    }
+    
+    /* Select styling */
+    .focus {
+        z-index:10;
+    }
+    
+    .jqMultiSelectWrapper {
+        width: 100%;
+        position:relative;
+        float:left;
+        background:@formBackground;
+        border:0;
+        color:@formTextDarkBlue;
+        font-family: helvetica, arial, san-serif;
+        font-size:1.3em;
+        font-weight:bold;
+        line-height:1.5em;
+        
+        div {
+            height:40px;
+        }
+        
+        div span {
+            border-bottom:1px solid #b9e3f8;
+            display:block;
+            white-space: nowrap;
+            padding:10px;
+            overflow: hidden;
+            cursor:pointer;
+        }
+        
+        a.jqTransformSelectOpen {
+            width: 0; 
+            height: 0; 
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid #858585;
+            margin-top:-3px;
+            position:absolute;
+            top:50%;
+            right:10px;
+            outline:0;
+        }
+        
+        ul {
+            position: absolute;
+            top: 39px;
+            left: 0px;
+            list-style: none;
+            background-color: #fff;
+            border:1px solid #b9e3f8;
+            display: none;
+            margin: 0;
+            padding: 0;
+            max-height: 150px;
+            width:100%;
+            overflow: auto;
+            overflow-y: auto;
+            z-index:10;
+            -webkit-border-radius: 0 0 5px 5px;
+            -moz-border-radius: 0 0 5px 5px;
+            -o-border-radius: 0 0 5px 5px;
+            -ms-border-radius: 0 0 5px 5px;
+            border-radius: 0 0 5px 5px;
+            -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+            -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+            -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+            -ms-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+            
+            a {
+                display: block;
+                padding: 5px;
+                text-decoration: none;
+                color:#686d71;
+                background-color: #FFF;
+                font-weight:normal;
+            }
+            
+            a.selected {
+                background: #dae9f1;
+                color: #39657b;
+            }
+            
+            a:hover, 
+            a.selected:hover,
+            a:focus{
+                background:#eaf7fe;
+                color: #39657b;
+            }
+        }
+
+        
+        .focus + ul {
+            display:block !important;
+        }
+    }
+    
+    /* -------------
+     * Radios
+     * ------------- */
+    .jqMultiRadioWrapper {
+        display:block;
+        height:40px;
+        width:40px;
+
+        a {
+            background:#88c5e3;
+            display:block;
+            float: left;
+            height:20px;
+            margin:10px;
+            width:20px;
+            -webkit-border-radius:400px;
+            -moz-border-radius:400px;
+            -o-border-radius:400px;
+            -ms-border-radius:400px;
+            border-radius:400px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+            -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+            -ms-box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+            -o-box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+        }
+        
+        .jqMultiChecked {
+            background:#ff9453;
+            
+            span {
+                background:#fff;
+                display:block;
+                height:10px;
+                width:10px;
+                margin:5px auto 0;
+                -webkit-border-radius:400px;
+                -moz-border-radius:400px;
+                -o-border-radius:400px;
+                -ms-border-radius:400px;
+                border-radius:400px;
+            }
+        }
+    }
+    
+    /* -------------
+    * Checkboxes
+    * ------------- */
+   .jqMultiCheckboxWrapper{
+        display:block;
+        height:40px;
+        width:40px;
+       
+        a {
+             background:#88c5e3;
+            display:block;
+            float: left;
+            height:20px;
+            margin:10px;
+            width:20px;
+            -webkit-border-radius:5px;
+            -moz-border-radius:5px;
+            -o-border-radius:5px;
+            -ms-border-radius:5px;
+            border-radius:5px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+            -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+            -ms-box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+            -o-box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+        }
+        
+        a.jqMultiChecked {
+            background:#ff9453 url('/bundles/wongapaylaterui/images/forms/tick.png') no-repeat center center;
+        }
+   }
+   
+   .button-wrapper {
+       float:right;
+   
+        button {
+            border:0;
+            color:#fff;
+            float:right;
+            font-size:1.4em;
+            margin-top:30px;
+            padding:10px 30px 10px 20px;
+            position:relative;
+            -webkit-border-radius:5px;
+            -moz-border-radius:5px;
+            -o-border-radius:5px;
+            -ms-border-radius:5px;
+            border-radius:5px;
+            background: #6f6f70; /* Old browsers */
+            background: -moz-linear-gradient(top,  #6f6f70 1%, #4f4f4f 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#6f6f70), color-stop(100%,#4f4f4f)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  #6f6f70 1%,#4f4f4f 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  #6f6f70 1%,#4f4f4f 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  #6f6f70 1%,#4f4f4f 100%); /* IE10+ */
+            background: linear-gradient(to bottom,  #6f6f70 1%,#4f4f4f 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f6f70', endColorstr='#4f4f4f',GradientType=0 ); /* IE6-9 */
+       
+            span {
+                 border-top: 8px solid transparent;
+                 border-bottom: 8px solid transparent;
+                 border-left: 8px solid #88c5e3;
+                 display:block;
+                 height:0;
+                 margin-top:-8px;
+                 width:0;
+                 position:absolute;
+                 top:50%;
+                 right:10px;
+            }
+       }
+   }
+
+    /* -------------
+     * Hidden - used to hide the original form elements
+     * ------------- */
+    .jqMultiHide {display: none;}
+    
+    .error input[type=text],
+    .error input[type=password] {
+        background:#f2c5b9;
+        border-color:#f59a7e;
+    }
+    
+    .error input:focus[type=text],
+    .error input:focus[type=password] {
+        background:#fff;
+        border-bottom:1px solid #b9e3f8;
+    }
+    
+    .row-fluid {
+        position:relative;
+    }
+        
+        .error ::-webkit-input-placeholder {
+            color:#f59a7e;
+            font-weight:normal;
+        }
+        .error :-moz-placeholder {
+            color:#f59a7e;
+            font-weight:normal;
+        }
+        .error ::-moz-placeholder {
+            color:#f59a7e;
+            font-weight:normal;
+        }
+        .error :-ms-input-placeholder {
+            color:#f59a7e;
+            font-weight:normal;
+        }
+}
+
+@media (max-width: 480px) {
+    .row-fluid {
+        .span12 {
+            position:relative;
+        }
+    
+        .label {
+            left:0;
+            padding-left:10px;
+            position:absolute;
+            top:0;
+            
+            label {
+                font-weight:400;
+            }
+        }
+        
+        ::-webkit-input-placeholder, {
+            color:transparent;
+        }
+        :-moz-placeholder {
+            color:transparent;
+        }
+        ::-moz-placeholder {
+            color:transparent;
+        }
+        :-ms-input-placeholder {
+            color:transparent;
+        }
+        
+        .error ::-webkit-input-placeholder {
+            color:#000 !important;
+            font-weight:normal;
+        }
+        .error :-moz-placeholder {
+            color:#000 !important;
+            font-weight:normal;
+        }
+        .error ::-moz-placeholder {
+            color:#000 !important;
+            font-weight:normal;
+        }
+        .error :-ms-input-placeholder {
+            color:#000 !importants;
+            font-weight:normal;
+        }
+
+    }
+}
